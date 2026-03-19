@@ -1,11 +1,9 @@
-# CS823 Assignment 1 — Classical and Temporal Planning (PDDL)
+# Assignment 1 - Classical and Temporal Planning (PDDL)
 
 This project implements both classical and temporal planning models for a package delivery workflow.  
-It was developed as part of the MSc module CS823: Reasoning for Intelligent Agents at the University of Strathclyde.
+It was developed as part of the MSc module: Reasoning for Intelligent Agents at the University of Strathclyde.
 
 The work demonstrates domain modelling, action design, temporal reasoning, and plan generation using PDDL.
-
----
 
 ## Problem Overview
 
@@ -21,8 +19,6 @@ Two domains are implemented:
 
 - Classical domain (STRIPS actions, no durations)  
 - Temporal domain (durative actions, numeric fluents, fuel constraints, and delivery deadlines)
-
----
 
 ## Environment Description
 
@@ -63,8 +59,6 @@ Temporal-only additions:
 - (van-fuel-consumption-rate v)  
 - (location-distance from to)
 
----
-
 ## Classical Planning Domain
 
 The classical domain (domain_classical.pddl) defines the following actions:
@@ -77,8 +71,6 @@ The classical domain (domain_classical.pddl) defines the following actions:
 6. unload-package  
 
 These actions use instantaneous effects and logical preconditions.
-
----
 
 ## Temporal Planning Domain
 
@@ -99,9 +91,7 @@ Durative actions include:
 - drive-van  
 - load-package  
 - unload-package  
-- refuel-van  
-
----
+- refuel-van 
 
 ## Problem Files
 
@@ -123,8 +113,6 @@ Goal state requires:
 - vans returned to original locations  
 - drivers returned to original locations  
 
----
-
 ### Temporal Problem (problem_temporal.pddl)
 
 Extends the classical problem with:
@@ -138,8 +126,6 @@ Temporal constraints:
 
 - pkg1 delivered within 20 time units  
 - pkg2 delivered within 16 time units  
-
----
 
 ## Modelling Challenge: Handling Unsupported Negative Preconditions
 
@@ -160,8 +146,6 @@ To address this, the domain was redesigned using explicit state-tracking predica
 Actions update these predicates in their effects so that mutually exclusive states are always represented explicitly.  
 This approach preserved correctness while remaining compatible with the planner's restrictions.
 
----
-
 ## Key Techniques Demonstrated
 
 - STRIPS-style classical planning  
@@ -171,8 +155,6 @@ This approach preserved correctness while remaining compatible with the planner'
 - Resource modelling (drivers, vans, packages)  
 - Plan validation and debugging  
 - Modelling concurrency and over-all conditions  
-
----
 
 ## What I Learned
 
